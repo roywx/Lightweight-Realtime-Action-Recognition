@@ -112,15 +112,29 @@ def main():
                 current_prediction = labels[pred_idx]
                 current_confidence = confidence
 
+                left_wrist = keypoints[9]   # [y, x, confidence]
+                right_wrist = keypoints[10] # [y, x, confidence]
+
                  # if prediction != last_pred && confidence is high enough, send client message
-                if(last_sent_pred != current_prediction and confidence > .90) :
-                    message = {
-                        "action": current_prediction,
-                        "confidence": round(confidence, 3),
+              #  if(last_sent_pred != current_prediction and confidence >= .95) :
+                message = {
+                    "action": current_prediction,
+                    "confidence": round(confidence, 3),
+                    "left_hand": {
+                        "x": round(float(left_wrist[1]), 4),  # x is index 1
+                        "y": round(float(left_wrist[0]), 4),  # y is index 0
+                        "confidence": round(float(left_wrist[2]), 4)
+                    },
+                    "right_hand": {
+                        "x": round(float(right_wrist[1]), 4),
+                        "y": round(float(right_wrist[0]), 4),
+                        "confidence": round(float(right_wrist[2]), 4)
                     }
-                    last_sent_pred = current_prediction
-                    data = json.dumps(message) + "\n"
-                    conn.send(data.encode('utf-8'))
+                    
+                }
+                last_sent_pred = current_prediction
+                data = json.dumps(message) + "\n"
+                conn.send(data.encode('utf-8'))
 
             # Add prediction text
             buffer_status = f"{len(buffer)}/{SEQ_LEN}"

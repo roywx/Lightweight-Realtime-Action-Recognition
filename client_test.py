@@ -20,7 +20,13 @@ def main():
             message, buffer = buffer.split('\n', 1)
             if message:
                 action_data = json.loads(message)
+                
+                lh = action_data['left_hand']
+                rh = action_data['right_hand']
+                print(f"Right Hand:  x={rh['x']:.4f}, y={rh['y']:.4f}, conf={rh['confidence']:.4f}")
+                print(f"Left Hand:  x={lh['x']:.4f}, y={lh['y']:.4f}, conf={lh['confidence']:.4f}")
                 print(f"Action: {action_data['action']}, Confidence: {action_data['confidence']}")
+
 
 if __name__ == "__main__":
     main()

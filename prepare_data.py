@@ -5,8 +5,8 @@ from sklearn.model_selection import train_test_split
 DATA_FOLDER = Path("keypoints_dataset")
 ACTION_LABELS = ["stand", "right punch", "left punch", "block"]
 
-WINDOW = 10      # number of frames per training example
-STRIDE = 3       # how many frames to slide each step
+WINDOW = 6      # number of frames per training example
+STRIDE = 2       # how many frames to slide each step
 
 def prepare(): 
     all_sequences = []

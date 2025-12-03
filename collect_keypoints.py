@@ -7,9 +7,9 @@ import time
 from visualization_utils import draw_prediction_on_image
 
 
-#ACTION_LABELS = ["stand", "walk", "jump", "punch", "block"]
-ACTION_LABELS = ["right punch", "right punch", "right punch", "right punch", "right punch", "left punch", "left punch", "left punch", "left punch", "left punch"]
-#ACTION_LABELS = ["right punch", "right punch", "right punch", "right punch", "right punch", "left punch", "left punch", "left punch", "left punch", "left punch", "block", "block", "block", "block", "block"]
+#TRAINING_SEQUENCE = ["right punch", "right punch", "right punch", "right punch", "right punch", "left punch", "left punch", "left punch", "left punch", "left punch"]
+#TRAINING_SEQUENCE = ["stand", "stand", "stand", "stand", "right punch", "right punch", "right punch", "right punch", "right punch", "left punch", "left punch", "left punch", "left punch", "left punch", "block", "block", "block", "block", "block"]
+TRAINING_SEQUENCE = ["block", "block", "block", "block", "block"]
 
 COUNTDOWN_SEC = 5  
 RECORD_SEC = 1.5    
@@ -98,7 +98,7 @@ def main():
     # hard set pop up position
     cv2.moveWindow("Recording", 600, 50)
 
-    for action in ACTION_LABELS : 
+    for action in TRAINING_SEQUENCE : 
         countdown(action)
         record_action(action)
     
