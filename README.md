@@ -1,7 +1,6 @@
 # Lightweight-Realtime-Action-Recognition
 pipeline for human action recognition: data collection, GRU model training, and real-time classification using MoveNet pose keypoints
 
-
 pip install -q imageio
 
 pip install -q opencv-python
@@ -15,3 +14,9 @@ pip install scikit-learn
 pip install matplotlib
 
 pip install numpy
+
+results
+![til](./gifs/live.gif)
+![til](./gifs/vr.gif)
+
+
