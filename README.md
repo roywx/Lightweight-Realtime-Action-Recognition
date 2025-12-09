@@ -1,5 +1,5 @@
 # Lightweight-Realtime-Action-Recognition
-pipeline for human action recognition: data collection, GRU model training, and real-time classification using MoveNet pose keypoints
+pipeline for human action recognition: data collection, data preprocessing, GRU model training, and real-time classification using MoveNet pose keypoints
 
 pip install -q imageio
 
