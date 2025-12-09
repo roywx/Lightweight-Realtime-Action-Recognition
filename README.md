@@ -15,7 +15,7 @@ pip install matplotlib
 
 pip install numpy
 
-##example results
+## example results
 
 ![til](./gifs/live.gif)
 ![til](./gifs/vr.gif)
